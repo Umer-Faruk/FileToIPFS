@@ -1,6 +1,5 @@
 require('dotenv').config();
 const pinataSDK = require('@pinata/sdk');
-const pinata = pinataSDK('299e5e307c02e3848d26', 'b5f4aa6a74b4b7308483b2302ab3a1a1d790d944200f005ac884746fa6d1e021');
 const axios = require('axios');
 const fs = require('fs');
 
