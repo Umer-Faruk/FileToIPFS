@@ -1,0 +1,49 @@
+<%- include("./header") %>
+<a href="/">Home</a>
+<br>
+<h5>Files uploaded successfully.</h5>
+<br>
+
+
+
+ 
+<p>NAME: <%= name %></p>
+<p>Description: <%= description %></p>
+ 
+<!-- <p>URI :https://ipfs.io/ipfs/<%= URI %></p><br> -->
+
+
+
+<a> URI:<span id="user">https://ipfs.io/ipfs/<%= URI %></span> <button onclick="copy()" onmouseout="outFunc()"><span class="tooltiptext" id="myTooltip">Copy URI</span></button></a>
+
+<script>
+     function copy() {
+       /* Get the text field */
+       console.log("clicl on onje");
+       var copyText = document.getElementById("user");
+       
+         var text = document.getElementById("user").textContent;
+        // alert("Copied the text: " + copyText.textContent);
+         navigator.clipboard.writeText(text)
+         .then(() => {
+             console.log('Text copied to clipboard');
+             var tooltip = document.getElementById("myTooltip");
+             tooltip.innerHTML = "Copied";
+             
+             
+         })
+         .catch(err => {
+             console.error('Error in copying text: ', err);
+         });
+      
+       }
+
+       function outFunc() {
+
+         var tooltip = document.getElementById("myTooltip");
+           tooltip.innerHTML = "Copy URI";
+       }
+
+ 
+           
+     </script>

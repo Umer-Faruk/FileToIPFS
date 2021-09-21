@@ -1,0 +1,59 @@
+<!--Opening the ejs tags for including header file-->
+<%- include("./header") %>
+ <h3>Hello Just Upload Image and Get the URI of it To create NFT
+	 
+ </h3>
+  
+ <div id="loader"></div>
+	 <div class="container">
+		<form method="POST" action="/profile-upload-single" enctype="multipart/form-data">
+		<div class="row">
+		  <div class="col-25">
+		    <label for="fname">Name</label>
+		  </div>
+		  <div class="col-75">
+		    <input type="text" id="name" name="name" placeholder=" name..">
+		  </div>
+		</div>
+		 
+		 
+		   
+		<div class="row">
+		  <div class="col-25">
+		    <label for="subject">description</label>
+		  </div>
+		  <div class="col-75">
+		    <textarea id="description" name="description" placeholder="Write something.." style="height:200px"></textarea>
+		  </div>
+		</div>
+		<div class="row">
+			<div class="col-25">
+			  <label for="profile-file"> Image File</label>
+			</div>
+			<div class="col-75">
+				<input type="file" name="profile-file" required/>
+			</div>
+		   </div>
+
+		<div class="row">
+		  <input type="submit" value="Submit" onclick="start();">
+		</div>
+		</form>
+	   </div>
+	  
+
+	   <script>
+		function start() {
+			console.log("start");
+		document.getElementById("loader").style.display = "block";
+		}
+		
+		function stop() {
+			console.log("stop");
+		document.getElementById("loader").style.display = "none";
+		}
+		 
+          
+        </script>
+<!--Opening the ejs tags for including footer file-->
+ 
