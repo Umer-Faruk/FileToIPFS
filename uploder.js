@@ -1,5 +1,4 @@
 require('dotenv').config();
-const pinataSDK = require('@pinata/sdk');
 const axios = require('axios');
 const fs = require('fs');
 
