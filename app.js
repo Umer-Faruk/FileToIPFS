@@ -40,8 +40,13 @@ app.post('/profile-upload-single', upload.single('profile-file'), function (req,
    ipfsr.then(function(_responce){
     console.log(_responce);
     //deleting the file from upload directory
-    
+   
     console.log("your image file uploded success fully");
+    fs.unlink(req.file.path, (err) => {
+      if (err) {
+        console.error(err)
+        
+      }});
   res.render("result",{
     name:req.body.name,
     description: req.body.description,
